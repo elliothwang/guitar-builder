@@ -1,9 +1,8 @@
 var express = require('express');
 var router = express.Router();
+var guitarCtrl = ('../controllers/guitar');
 
 /* GET users listing. */
-router.get('/', function(req, res) {
-  res.send('guitars page');
-});
+// router.get();
 
 module.exports = router;
