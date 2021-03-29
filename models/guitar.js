@@ -28,14 +28,14 @@ const bodySchema = new Schema({
 });
 
 const neckSchema = new Schema({
-  wood : {
+  neckWood : {
     type: String,
     enum : ['Maple', 'Ebony', 'Rosewood', 'Walnut'],
     default : 'Rosewood'
   },
   positionMarkers : {
-    type : Boolean,
-    default : true
+    type : ['True', 'False'],
+    default: 'True'
   }
 }, { 
   timestamps: true 

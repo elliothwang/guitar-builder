@@ -11,7 +11,9 @@ module.exports = {
 };
 
 function index (req, res) {
-  res.render('index', {title : "Guitar Home"})
+  Guitar.find({}, function(err, guitars) {
+    res.render('index', {title : "Guitar Home", guitars});
+  });
 };
 
 function newGuitar (req, res) {
@@ -23,5 +25,9 @@ function show (req, res) {
 }
 
 function create (req, res) {
-  res.render(`/guitars/${guitar._id}`, {title : "Create Guitar in DB"})
+  const guitar = new Guitar(req.body);
+  guitar.save(function (err) {
+    if (err) return res.redirect('/guitars/new');
+  });
+  res.redirect('/guitars/index');
 };

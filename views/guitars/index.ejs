@@ -1,0 +1,11 @@
+<%- include('../partials/header') %>
+
+  <% guitars.forEach(function (guitar) { %>
+    <div>
+      <%= guitar.name %>
+      <%= guitar.body %>
+      <%= guitar.neck %>
+    </div>
+  <% }); %>
+  
+<%- include('../partials/footer') %>
