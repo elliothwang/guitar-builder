@@ -1,5 +1,37 @@
-<%- include('./partials/header') %>
+<%- include('../partials/header') %>
 
-<!-- make form -->
+<form id="new-guitar-form" action="/guitars" method="POST">
+  <label>Body Type</label>
+    <select name="bodyType">
+      <option value='Dreadnought' selected="selected">Dreadnought</option>
+      <option value='Auditorium'>Auditorium</option>
+      <option value='Parlour'>Parlour</option>
+      <option value='Classical'>Classical</option>
+    </select>
+  <label>Top Wood</label>
+    <select name="topWood">
+      <option value='Spruce'>Spruce</option>
+      <option value='Cedar' selected="selected">Cedar</option>
+      <option value='Mahogany'>Mahogany</option>
+      <option value='Maple'>Maple</option>
+    </select>
+  <label>Side Wood</label>
+    <select name="sideWood">
+      <option value='Spruce'>Spruce</option>
+      <option value='Mahogany' selected="selected">Mahogany</option>
+      <option value='Maple'>Maple</option>
+      <option value='Koa'>Koa</option>
+      <option value='Rosewood'>Rosewood</option>
+      <option value='Walnut'>Walnut</option>
+    </select>
+  <label>Back Wood</label>
+    <select name="backWood">
+      <option value='Spruce'>Spruce</option>
+      <option value='Cedar'>Cedar</option>
+      <option value='Mahogany' selected="selected">Mahogany</option>
+      <option value='Maple'>Maple</option>
+    </select>
+  <input type="submit" value="Create Guitar">
+</form>
   
-<%- include('./partials/footer') %>
+<%- include('../partials/footer') %>

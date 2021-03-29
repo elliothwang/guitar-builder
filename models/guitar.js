@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 // embedded schemas (neck & body)
 const bodySchema = new Schema({
-  model : {
+  bodyType : {
     type : String,
     enum : ['Dreadnought', 'Auditorium', 'Parlour', 'Classical'],
     default: 'Dreadnought',
