@@ -6,23 +6,6 @@
   <input type="submit" value="Create Guitar">
 </form>
 
-<form id="new-neck-form" action="/guitars<%= guitar._id %>/body" method="POST">
-  <label>Neck Wood</label>
-    <select name="neckWood">
-      <option value="Maple">Maple</option>
-      <option value="Ebony">Ebony</option>
-      <option value="Rosewood" selected="selected">Rosewood</option>
-      <option value="Walnut">Walnut</option>
-    </select>
-  <label>Position Markers</label>
-    <select name="positionMarkers">
-      <option value="True" selected="selected">True</option>
-      <option value="False">False</option>
-    </select>
-    
-    <input type="submit" value="Save Neck">
-</form>
-
 <form id="new-body-form" action="/guitars<%= guitar._id %>/body" method="POST">
   <label>Body Type</label>
     <select name="bodyType">
@@ -57,6 +40,21 @@
   <input type="submit" value="Save Body">
 </form>
 
-
+<form id="new-neck-form" action="/guitars<%= guitar._id %>/body" method="POST">
+  <label>Neck Wood</label>
+    <select name="neckWood">
+      <option value="Maple">Maple</option>
+      <option value="Ebony">Ebony</option>
+      <option value="Rosewood" selected="selected">Rosewood</option>
+      <option value="Walnut">Walnut</option>
+    </select>
+  <label>Position Markers</label>
+    <select name="positionMarkers">
+      <option value="True" selected="selected">True</option>
+      <option value="False">False</option>
+    </select>
+    
+    <input type="submit" value="Save Neck">
+</form>
   
 <%- include('../partials/footer') %>
