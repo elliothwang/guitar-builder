@@ -6,7 +6,8 @@
   <input type="submit" value="Create Guitar">
 </form>
 
-<form id="new-body-form" action="/guitars<%= guitar._id %>/body" method="POST">
+
+<form id="new-body-form" action="/guitars" method="POST">
   <label>Body Type</label>
     <select name="bodyType">
       <option value='Dreadnought' selected="selected">Dreadnought</option>
@@ -40,7 +41,7 @@
   <input type="submit" value="Save Body">
 </form>
 
-<form id="new-neck-form" action="/guitars<%= guitar._id %>/body" method="POST">
+<form id="new-neck-form" action="/guitars" method="POST">
   <label>Neck Wood</label>
     <select name="neckWood">
       <option value="Maple">Maple</option>

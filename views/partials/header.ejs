@@ -7,13 +7,12 @@
   <body>
     <nav>
       <a href='/'>HOME</a>
-      <!-- <a href="/guitars"	<%- title === 'See All Saved Customs' ? 'class="active"' : '' %>> -->
-      <a href="/guitars/new"	<%- title === 'Create Custom' ? 'class="active"' : '' %>>
-        Create Custom</a>
+      <a href="/guitars"	<%- title === 'Guitars' ? 'class="active"' : '' %>>All Guitars</a>
       <% if (user) { %>
-        <a href="/guitars/saved" <%- title === 'Saved Customs' ? 'class="active"' : '' %>>Saved Custom</a>
+        <a href="/guitars/new"	<%- title === 'New Custom' ? 'class="active"' : '' %>>Create Custom</a>
+        <a href="/guitars/saved" <%- title === 'Saved Customs' ? 'class="active"' : '' %>>Saved Customs</a>
         <a href="/logout">LOG OUT</a>
-        <% } else { %>
-          <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-        <% }; %>
+      <% } else { %>
+        <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+      <% }; %>
     </nav>
