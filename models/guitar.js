@@ -23,17 +23,34 @@ const bodySchema = new Schema({
     enum : ['Spruce', 'Cedar', 'Mahogany', 'Maple'],
     default : 'Mahogany'
   }
+}, { 
+  timestamps: true 
+});
+
+const neckSchema = new Schema({
+  wood : {
+    type: String,
+    enum : ['Maple', 'Ebony', 'Rosewood', 'Walnut'],
+    default : 'Rosewood'
+  },
+  positionMarkers : {
+    type : Boolean,
+    default : true
+  }
+}, { 
+  timestamps: true 
 });
 
 // parent schema guitarSchema
 const guitarSchema = new Schema({
-  name : String,
+  name : {
+    type : String,
+    required : true
+  },
   body : [bodySchema],
-  neck : [neckSchema]
-})
-
-  // neck : [neckSchema]
-  // body : [bodySchema]
-  
+  neck : [neckSchema],
+}, { 
+  timestamps: true 
+});
 
 module.exports = mongoose.model('Guitar', guitarSchema);
