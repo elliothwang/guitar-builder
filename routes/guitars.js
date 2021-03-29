@@ -1,19 +1,12 @@
 var express = require('express');
 var router = express.Router();
-var guitarCtrl = ('../controllers/guitar');
+var guitarsCtrl = ('../controllers/guitars');
 
 /* GET users listing. */
-// router.get('/', guitarCtrl.index);
-router.get('/', function (req, res) {
-  res.send("guitars home page");
-});
-// router.get('/new', isLoggedIn, moviesCtrl.new);
-router.get('/new', function (req, res) {
-  res.send("make a custom guitar page");
-});
-
-// router.get('/:id', isLoggedIn, moviesCtrl.show);
-// router.post('/', isLoggedIn, moviesCtrl.create);
+router.get('/', guitarsCtrl.index);
+router.get('/new', isLoggedIn, guitarsCtrl.new);
+router.get('/:id', isLoggedIn, guitarsCtrl.show);
+router.post('/', isLoggedIn, guitarsCtrl.create);
 
 router.get('/saved', function (req, res) {
   res.send('See your saved customs page');
