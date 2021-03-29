@@ -11,7 +11,7 @@ module.exports = {
 };
 
 function index (req, res) {
-  res.render('guitars/index', {title : "Guitar Home"})
+  res.render('index', {title : "Guitar Home"})
 };
 
 function newGuitar (req, res) {
