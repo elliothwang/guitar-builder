@@ -14,7 +14,7 @@ require('./config/passport');
 var indexRouter = require('./routes/index');
 var guitarsRouter = require('./routes/guitars');
 var bodysRouter = require('./routes/bodys');
-var neckRouter = require('./routes/necks');
+var necksRouter = require('./routes/necks');
 
 var app = express();
 
