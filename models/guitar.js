@@ -49,6 +49,11 @@ const guitarSchema = new Schema({
   },
   body : [bodySchema],
   neck : [neckSchema],
+  user : {
+    type : Schema.Types.ObjectId, ref : 'User'
+  },
+  userName : String,
+  userAvatar : String
 }, { 
   timestamps: true 
 });
