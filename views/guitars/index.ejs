@@ -8,6 +8,9 @@
       <%= guitar.body %>
       <%= guitar.neck %>
     </div>
+    <a href='/guitars/<%= guitar._id%>'>Guitar Details</a>
   <% }); %>
   
+  <a href='/guitars/new'>Create Custom Guitar</a>
+
 <%- include('../partials/footer') %>

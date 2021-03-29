@@ -12,7 +12,7 @@ module.exports = {
 
 function index (req, res) {
   Guitar.find({}, function(err, guitars) {
-    res.render('index', {title : "Guitar Home", guitars});
+    res.render('guitars/index', {title : "Guitar Home", guitars});
   });
 };
 
