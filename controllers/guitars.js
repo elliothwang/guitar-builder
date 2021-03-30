@@ -12,6 +12,7 @@ module.exports = {
 };
 
 function index (req, res) {
+
   Guitar.find({}, function(err, guitars) {
     // nested find function
       // use guitars ids whatevers go in empty object
@@ -31,25 +32,23 @@ function show (req, res) {
 
 function create (req, res) {
   req.body.user = req.user._id;
+  console.log(req.body.user);
   req.body.userName = req.user.name;
   req.body.userAvatar = req.user.avatar;
 
   const guitar = new Guitar(req.body);
   guitar.save(function (err) {
     if (err) return res.redirect('/guitars/new');
-    res.redirect('/guitars/index');
+    res.redirect('/guitars');
   });
 };
 
 function deleteGuitar (req, res) {
   Guitar.findOne({'guitars._id': req.params.id}).then(function(guitar) {
-    console.log(req.params);
+    // console.log(guitar)
     // if (!guitar.user.equals(req.user._id)) return res.redirect('/guitars');
     Guitar.findByIdAndDelete(req.params.id, function (err) {
-      console.log(req.params.id);
-      if(err) console.log(err);
-      console.log("Successful deletion");
-    })
+      res.redirect('/guitars');
+    });
   });
-  res.redirect('/guitars');
 };

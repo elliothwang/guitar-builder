@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+
+  <h1>All guitars</h1>
+
+  <a href='/guitars/new'>Create Custom Guitar</a>
+
+  <% userGuitars.forEach(function (userGuitar) { %>
+    <div>
+      <%= userGuitar.name %>
+      <%= userGuitar.body %>
+      <%= userGuitar.neck %>
+    </div>
+  <% }); %>
+
+<%- include('../partials/footer') %> 
