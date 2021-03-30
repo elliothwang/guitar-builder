@@ -3,11 +3,8 @@
 <form id="new-guitar-form" action="/guitars" method="POST">
   <label>Guitar Name</label>
     <input type="text" name="name" id="guitar-name">
-  <input type="submit" value="Create Guitar">
-</form>
 
 
-<form id="new-body-form" action="/guitars" method="POST">
   <label>Body Type</label>
     <select name="bodyType">
       <option value='Dreadnought' selected="selected">Dreadnought</option>
@@ -38,10 +35,8 @@
       <option value='Mahogany' selected="selected">Mahogany</option>
       <option value='Maple'>Maple</option>
     </select>
-  <input type="submit" value="Save Body">
-</form>
 
-<form id="new-neck-form" action="/guitars" method="POST">
+
   <label>Neck Wood</label>
     <select name="neckWood">
       <option value="Maple">Maple</option>
@@ -55,7 +50,7 @@
       <option value="False">False</option>
     </select>
     
-    <input type="submit" value="Save Neck">
+  <input type="submit" value="Create Guitar">
 </form>
   
 <%- include('../partials/footer') %>

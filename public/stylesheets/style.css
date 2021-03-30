@@ -8,8 +8,12 @@ a {
 }
 
 nav {
+  grid-area: nav;
   background-color: gray;
-  padding: 1vmin;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
 }
 
 .login {
@@ -21,5 +25,11 @@ nav {
 
 .login img {
   height: 30px;
+}
+
+#new-guitar-form {
+  display: grid;
+  grid-gap: 10px;
+  float: right;
 }
 

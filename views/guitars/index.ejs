@@ -2,6 +2,8 @@
 
   <h1>All guitars</h1>
 
+  <!-- how to make half of the page require logged in but not the other half? -->
+
   <% guitars.forEach(function (guitar) { %>
     <div>
       <%= guitar.name %>
@@ -9,8 +11,19 @@
       <%= guitar.neck %>
     </div>
     <a href='/guitars/<%= guitar._id%>'>Guitar Details</a>
+    <form action="/guitars/<%= guitar.id %>?_method=DELETE" method="POST">
+      <button type="submit">DELETE</button>
+    </form>
   <% }); %>
-  
+
   <a href='/guitars/new'>Create Custom Guitar</a>
 
-<%- include('../partials/footer') %>
+  <% userGuitars.forEach(function (userGuitar) { %>
+    <div>
+      <%= userGuitar.name %>
+      <%= userGuitar.body %>
+      <%= userGuitar.neck %>
+    </div>
+  <% }); %>
+
+<%- include('../partials/footer') %> 
