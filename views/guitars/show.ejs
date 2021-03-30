@@ -1,5 +1,17 @@
 <%- include('../partials/header') %>
 
+<h1>Guitar Details:</h1>  
+
+<% guitars.forEach(function (guitar) { %>
+  <div>
+    <%= guitar.name %>
+    <%= guitar.body %>
+    <%= guitar.neck %>
+  </div>
+  <form action="/guitars/<%= guitar.id %>?_method=DELETE" method="POST">
+    <button type="submit">DELETE</button>
+  </form>
+<% }); %>
 
 
 <%- include('../partials/footer') %>
