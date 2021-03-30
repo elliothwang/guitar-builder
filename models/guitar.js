@@ -34,8 +34,8 @@ const neckSchema = new Schema({
     default : 'Rosewood'
   },
   positionMarkers : {
-    type : ['True', 'False'],
-    default: 'True'
+    type : Boolean,
+    default: true
   }
 }, { 
   timestamps: true 
@@ -47,8 +47,8 @@ const guitarSchema = new Schema({
     type : String,
     required : true
   },
-  body : [bodySchema],
-  neck : [neckSchema],
+  body : bodySchema,
+  neck : neckSchema,
   user : {
     type : Schema.Types.ObjectId, ref : 'User'
   },
@@ -59,3 +59,4 @@ const guitarSchema = new Schema({
 });
 
 module.exports = mongoose.model('Guitar', guitarSchema);
+

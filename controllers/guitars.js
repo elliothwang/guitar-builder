@@ -1,8 +1,5 @@
 const Guitar = require('../models/guitar');
 
-// have to use this somewhere in index or show or something
-// req.body.user = req.user._id
-
 module.exports = {
   index,
   new : newGuitar,
@@ -11,15 +8,28 @@ module.exports = {
   delete : deleteGuitar
 };
 
-function index (req, res) {
-  // if route is /index
+  // use req.query
+
+function allGuitars () {
+  // add a route for all guitars
   Guitar.find({}, function(err, guitars) {
     // nested find function
       // define userGuitars
-    Guitar.find({}, function (err, userGuitars) {
+    Guitar.find({user : req.user._id}, function (err, userGuitars) {
       res.render('guitars/index', {title : "All Guitars", guitars, userGuitars});
     });
   });
+};
+
+function index (req, res) {
+  // responsible for most recently saved & all user's guitars
+  // use req user id
+  Guitar.find({}, function (err,) {
+    // if (req.query.recent) find & show most recent guitar
+    // recent guitar should have request query (recent : true)
+
+  })
+  
 };
 
 function newGuitar (req, res) {
@@ -31,12 +41,23 @@ function show (req, res) {
 };
 
 function create (req, res) {
+
+  // let guitarData = {
+  //   name : ,
+  //   body : {
+  //     // populate w data from req.body
+  //     bodyType : req.body.bodyType
+  //   },
+  //   neck : {
+
+  //   },
+  // }
+
   req.body.user = req.user._id;
-  console.log(req.body.user);
   req.body.userName = req.user.name;
   req.body.userAvatar = req.user.avatar;
 
-  const guitar = new Guitar(req.body);
+  const guitar = new Guitar(guitarData);
   guitar.save(function (err) {
     if (err) return res.redirect('/guitars/new');
     res.redirect('/guitars');
@@ -44,9 +65,8 @@ function create (req, res) {
 };
 
 function deleteGuitar (req, res) {
-  Guitar.findOne({'guitars._id': req.params.id}).then(function(guitar) {
-    // console.log(guitar)
-    // if (!guitar.user.equals(req.user._id)) return res.redirect('/guitars');
+  Guitar.findById(req.params.id).then(function(guitar) {
+    if (!guitar.user.equals(req.user._id)) return res.redirect('/guitars');
     Guitar.findByIdAndDelete(req.params.id, function (err) {
       res.redirect('/guitars');
     });
