@@ -1,9 +1,14 @@
-const express = require('express');
-const router = express.Router();
-const commentsCtrl = require('../controllers/comments');
-const isLoggedIn = require('../config/auth');
+const Guitar = require('../models/guitar');
 
-router.post('/guitars/:id/comments', isLoggedIn, commentsCtrl.create);
-router.delete('/comments/:id', isLoggedIn, commentsCtrl.delete);
+module.exports = {
+  create,
+  delete : deleteComment
+};
 
-module.exports = router;
+function create (req, res) {
+
+};
+
+function deleteComment (req, res) {
+
+};
