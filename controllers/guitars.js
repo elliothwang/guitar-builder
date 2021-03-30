@@ -12,13 +12,13 @@ module.exports = {
 };
 
 function index (req, res) {
-
+  // if route is /index
   Guitar.find({}, function(err, guitars) {
     // nested find function
-      // use guitars ids whatevers go in empty object
+      // define userGuitars
     Guitar.find({}, function (err, userGuitars) {
-      res.render('guitars/index', {title : "Guitar Home", guitars, userGuitars});
-    })
+      res.render('guitars/index', {title : "All Guitars", guitars, userGuitars});
+    });
   });
 };
 
@@ -27,7 +27,7 @@ function newGuitar (req, res) {
 };
 
 function show (req, res) {
-  res.render('guitars/show', {title : "Show All Customs"});
+  res.render('guitars/show', {title : "Guitar Details", guitars});
 };
 
 function create (req, res) {
