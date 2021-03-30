@@ -38,7 +38,8 @@ function newGuitar (req, res) {
 };
 
 function show (req, res) {
-  Guitar.findById(req.params.id).then(function (err, guitar) {
+  Guitar.findById(req.params.id).then(function (guitar) {
+    console.log(req.params.id);
     res.render('guitars/show', {title : "Guitar Details", guitar});
   });
 };

@@ -4,9 +4,9 @@ var guitarsCtrl = require('../controllers/guitars');
 const isLoggedIn = require('../config/auth');
 
 /* GET users listing. */
-router.get('/', guitarsCtrl.allGuitars);
+router.get('/', isLoggedIn, guitarsCtrl.allGuitars);
 // complete index function & replace allGuitars w/ index for '/saved'
-router.get('/saved', guitarsCtrl.allGuitars);
+router.get('/saved', isLoggedIn, guitarsCtrl.allGuitars);
 router.get('/new', isLoggedIn, guitarsCtrl.new);
 router.get('/:id', isLoggedIn, guitarsCtrl.show);
 router.post('/', isLoggedIn, guitarsCtrl.create);
