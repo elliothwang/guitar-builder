@@ -15,6 +15,7 @@ var indexRouter = require('./routes/index');
 var guitarsRouter = require('./routes/guitars');
 var bodysRouter = require('./routes/bodys');
 var necksRouter = require('./routes/necks');
+var commentsRouter = require('./routes/comments');
 
 var app = express();
 
@@ -47,6 +48,7 @@ app.use('/', indexRouter);
 app.use('/guitars', guitarsRouter);
 app.use('/guitars', bodysRouter);
 app.use('/guitars', necksRouter);
+app.use('/guitars', commentsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
