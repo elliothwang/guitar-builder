@@ -11,10 +11,13 @@ function create (req, res) {
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
 
-    
-  })
+    guitar.comments.push(req.body);
+    guitar.save(function(err) {
+      res.redirect(`/guitars/${guitar._id}`)
+    });
+  });
 };
 
 function deleteComment (req, res) {
-
+  
 };
