@@ -6,7 +6,8 @@ module.exports = {
   show,
   create,
   delete : deleteGuitar,
-  allGuitars
+  allGuitars,
+  update
 };
 
   // use req.query
@@ -76,4 +77,8 @@ function deleteGuitar (req, res) {
       res.redirect('/guitars');
     });
   });
+};
+
+function update (req, res) {
+
 };

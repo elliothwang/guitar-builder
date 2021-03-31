@@ -2,7 +2,8 @@ const Guitar = require('../models/guitar');
 
 module.exports = {
   create,
-  delete : deleteComment
+  delete : deleteComment,
+  update
 };
 
 function create (req, res) {
@@ -13,6 +14,7 @@ function create (req, res) {
 
     guitar.comments.push(req.body);
     guitar.save(function (err) {
+      console.log(req.body);
       res.redirect(`/guitars/${guitar._id}`);
     });
   });
@@ -27,4 +29,8 @@ function deleteComment (req, res) {
       res.redirect(`/guitars/${guitar._id}`);
     });
   });
+};
+
+function update (req, res) {
+
 };

@@ -10,6 +10,6 @@ router.get('/new', isLoggedIn, guitarsCtrl.new);
 router.get('/:id', isLoggedIn, guitarsCtrl.show);
 router.post('/', isLoggedIn, guitarsCtrl.create);
 router.delete('/:id', isLoggedIn, guitarsCtrl.delete);
-// router.put('/:id', guitarsCtrl.update);
+router.put('/:id', guitarsCtrl.update);
 
 module.exports = router;
