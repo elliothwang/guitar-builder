@@ -80,5 +80,10 @@ function deleteGuitar (req, res) {
 };
 
 function update (req, res) {
-
+  Guitar.findById(req.params.id).then(function (guitar) {
+    const updatedGuitar = Object.assign(guitar, req.body);
+    Guitar.findByIdAndUpdate(req.params.id, updatedGuitar, function (err, guitar) {
+      res.redirect(`/guitars/${req.params.id}`);
+    });
+  });
 };

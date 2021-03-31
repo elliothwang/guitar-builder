@@ -14,7 +14,6 @@ function create (req, res) {
 
     guitar.comments.push(req.body);
     guitar.save(function (err) {
-      console.log(req.body);
       res.redirect(`/guitars/${guitar._id}`);
     });
   });
@@ -32,5 +31,5 @@ function deleteComment (req, res) {
 };
 
 function update (req, res) {
-
+  
 };
