@@ -27,7 +27,7 @@
         <%= comment.content %>
         <%= user._id %>
         <% if (user && user._id.equals(comment.user)) { %>
-          <form action="/comments/<%= comment._id %>" method="POST">
+          <form action="/comments/<%= comment._id %>/edit" method="GET">
             <button type="submit">Update Comment</button>
           </form>
           <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">

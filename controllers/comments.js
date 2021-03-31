@@ -3,7 +3,8 @@ const Guitar = require('../models/guitar');
 module.exports = {
   create,
   delete : deleteComment,
-  update
+  update,
+  edit
 };
 
 function create (req, res) {
@@ -33,10 +34,20 @@ function deleteComment (req, res) {
 
 function update (req, res) {
   Guitar.findOne({'comments._id': req.params.id}).then(function(guitar) {
-    let comment = Guitar.comments.id(req.params.id);
+    console.log(guitar);
+    let comment = guitar.comments.id(req.params.id);
     Object.assign(comment, req.body);
     guitar.save(function(err) {
-      res.redirect(`/guitars/${req.params.id}`);
+      res.redirect(`/guitars/${guitar._id}`);
     });
+  });
+};
+
+
+function edit (req, res) {
+  Guitar.findOne({'comments._id': req.params.id}).then(function(guitar) {
+    let comment = guitar.comments.id(req.params.id);
+    console.log(comment);
+    res.render('comments/commentEdit', {title : "Edit Comment", comment});
   });
 };

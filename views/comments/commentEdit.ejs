@@ -1,0 +1,12 @@
+<%- include('../partials/header') %> 
+
+  <% if (user) { %>
+    <h2>Edit a comment!</h2>
+      <form id="comment-form" action="/comments/<%= comment.id %>?_method=PUT" method="POST">
+        <label>Comment:</label>
+          <textarea name="content" ><%= comment.content %></textarea>
+        <input type="submit" value="Edit Comment">
+      </form>
+    <% } %>
+
+<%- include('../partials/footer') %> 
