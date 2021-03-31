@@ -31,5 +31,11 @@ function deleteComment (req, res) {
 };
 
 function update (req, res) {
-  
+  Guitar.findOne({'comments._id': req.params.id}).then(function(guitar) {
+    let comment = Guitar.comments.id(req.params.id);
+    Object.assign(comment, req.body);
+    guitar.save(function(err) {
+      res.redirect(`/guitars/${req.params.id}`);
+    })
+  });
 };
