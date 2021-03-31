@@ -5,7 +5,8 @@
     <%= guitar.name %>
     <%= guitar.body %>
     <%= guitar.neck %>
-    <%= guitar.user %>
+    <%= guitar.userName %>
+    <%= guitar.userAvatar %>
   </div>
   <form action="/guitars/<%= guitar.id %>?_method=DELETE" method="POST">
     <button type="submit">DELETE</button>

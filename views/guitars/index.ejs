@@ -2,11 +2,11 @@
 
   <h1>All guitars</h1>
 
-  <!-- how to make half of the page require logged in but not the other half? -->
-
   <% guitars.forEach(function (guitar) { %>
     <div>
       <%= guitar.name %>
+      <%= guitar.userName %>
+      <%= guitar.userAvatar %>
       <!-- image of guitar -->
 
     </div>
@@ -17,13 +17,3 @@
   <% }); %>
 
   <a href='/guitars/new'>Create Custom Guitar</a>
-
-  <% userGuitars.forEach(function (userGuitar) { %>
-    <div>
-      <%= userGuitar.name %>
-      <%= userGuitar.body %>
-      <%= userGuitar.neck %>
-    </div>
-  <% }); %>
-
-<%- include('../partials/footer') %> 

@@ -1,15 +1,17 @@
 <%- include('../partials/header') %>
 
-  <h1>All guitars</h1>
-
-  <a href='/guitars/new'>Create Custom Guitar</a>
+  <h1>User's guitars</h1>
 
   <% userGuitars.forEach(function (userGuitar) { %>
     <div>
       <%= userGuitar.name %>
       <%= userGuitar.body %>
       <%= userGuitar.neck %>
+      <%= userGuitar.userName %>
+      <%= userGuitar.userAvatar %>
     </div>
   <% }); %>
+
+  <a href='/guitars/new'>Create Custom Guitar</a>
 
 <%- include('../partials/footer') %> 

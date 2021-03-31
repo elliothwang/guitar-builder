@@ -17,20 +17,18 @@ function allGuitars (req, res) {
     // nested find method
       // define userGuitars with "user : req.user.id"
     Guitar.find({user : req.user._id}, function (err, userGuitars) {
+    // if (req.query.recent) find & show most recent guitar
+    // recent guitar should have request query (recent : true)
       res.render('guitars/index', {title : "All Guitars", guitars, userGuitars});
     });
   });
 };
 
 function index (req, res) {
-  // responsible for most recently saved & all user's guitars
-  // use req user id
-  Guitar.find({}, function (err,) {
-    // if (req.query.recent) find & show most recent guitar
-    // recent guitar should have request query (recent : true)
-
+  Guitar.find({user : req.user._id}).then(function (userGuitars) {
+    console.log(req.user._id);
+    res.render('guitars/userIndex', {title : "User Guitars", userGuitars});
   });
-  
 };
 
 function newGuitar (req, res) {
@@ -58,16 +56,16 @@ function create (req, res) {
       neckWood : req.body.neckWood,
       positionMarkers : req.body.positionMarkers
     },
-  }
-
-  req.body.user = req.user._id;
-  req.body.userName = req.user.name;
-  req.body.userAvatar = req.user.avatar;
+    user : req.user._id,
+    userName : req.user.name,
+    userAvatar : req.user.avatar
+  };
 
   const guitar = new Guitar(guitarData);
   guitar.save(function (err) {
     if (err) return res.redirect('/guitars/new');
     res.redirect('/guitars');
+    console.log(guitar);
   });
 };
 
