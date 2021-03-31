@@ -1,6 +1,20 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const commentSchema = new Schema({
+  content : String,
+  rating : {
+    type : String,
+    min : 1,
+    max : 5,
+    default : 5
+  },
+  userName : String,
+  userAvatar : String
+}, {
+  timestamps : true
+});
+
 // embedded schemas (neck & body)
 const bodySchema = new Schema({
   bodyType : {
@@ -54,10 +68,10 @@ const guitarSchema = new Schema({
     type : Schema.Types.ObjectId, ref : 'User'
   },
   userName : String,
-  userAvatar : String
+  userAvatar : String,
+  comments : [commentSchema]
 }, { 
   timestamps: true 
 });
 
 module.exports = mongoose.model('Guitar', guitarSchema);
-
