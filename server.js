@@ -48,7 +48,7 @@ app.use('/', indexRouter);
 app.use('/guitars', guitarsRouter);
 app.use('/guitars', bodysRouter);
 app.use('/guitars', necksRouter);
-app.use('/guitars', commentsRouter);
+app.use('/', commentsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

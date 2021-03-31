@@ -7,6 +7,6 @@ function create () {
     guitar.body.push(req.body);
     guitar.save(function(err) {
       res.redirect(`/guitars/${guitar._id}`)
-    })
-  })
+    });
+  });
 };

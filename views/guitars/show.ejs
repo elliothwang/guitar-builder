@@ -18,25 +18,18 @@
     <form id="comment-form" action="/guitars/<%= guitar.id %>/comments" method="POST">
       <label>Comment:</label>
         <textarea name="content"></textarea>
-      <!-- <label>Rating:</label>
-        <select>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5" selected="selected">5</option>
-        </select> -->
       <input type="submit" value="Add Comment">
     </form>
   <% } %>
 
   <% if (guitar.comments.length) { %>
-    <!-- <% let total = 0; %> -->
     <% guitar.comments.forEach(function (comment) { %>
-      <!-- <% total += comment.rating; %> -->
         <%= comment.content %>
-        <!-- <%= comment.rating %> -->
+        <%= user._id %>
         <% if (user && user._id.equals(comment.user)) { %>
+          <form action="/comments/<%= comment._id %>" method="POST">
+            <button type="submit">Update Comment</button>
+          </form>
           <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
             <button type="submit">Delete Comment</button>
           </form>

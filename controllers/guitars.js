@@ -15,7 +15,6 @@ module.exports = {
 function allGuitars (req, res) {
   // add a route for all guitars
   Guitar.find({}, function(err, guitars) {
-    // nested find method
       // define userGuitars with "user : req.user.id"
     Guitar.find({user : req.user._id}, function (err, userGuitars) {
     // if (req.query.recent) find & show most recent guitar
