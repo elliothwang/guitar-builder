@@ -19,7 +19,7 @@ nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin: 0 50px 0 50px;
+  font-size: 20px;
   font-weight: bold;
   color: #FFFFF0;
 }
@@ -33,16 +33,20 @@ a {
 a:hover {
   color: #e7c9a9;
   background-color: #FFFFF0;
-  border-radius: 7%;
+  border-radius: 25px;
 }
 
 a:active {
   color: slategray;
 }
 
-#corner-logo {
-  position: absolute;
-  left: 0;
+nav a:first-child {
+  object-fit: contain;
+  margin-right: auto;
+}
+
+nav a:first-child:hover {
+  background-color: transparent;
 }
 
 .login {
@@ -56,14 +60,27 @@ a:active {
   height: 30px;
 }
 
+#greeting {
+  position: absolute;
+  top: 10px;
+  right: 50px;
+}
+
 #index-title {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #FFFFF0;
-  background-color: #e7c9a9;
-  margin: 50px 0 0 0;
+  color: #e7c9a9;
+  font-size: 25px;
+  background-color: #FFFFF0;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 25px;
+  border: dotted 4px #e7c9a9;
+}
+
+#g {
+  margin: 0px -5px 0 20px;
 }
 
 #new-guitar-form {
@@ -77,4 +94,13 @@ a:active {
 
 #guitar-img {
   mix-blend-mode: multiply;
+}
+
+#footer-logo {
+  display: flex;
+  justify-content: center;
+}
+
+#footer-logo:hover {
+  background-color: transparent;
 }

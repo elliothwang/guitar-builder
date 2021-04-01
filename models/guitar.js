@@ -21,17 +21,20 @@ const bodySchema = new Schema({
   },
   topWood : {
     type: String,
-    enum : ['Cedar','Spruce', 'Mahogany', 'Maple'],
+    // enum : ['Cedar','Spruce', 'Mahogany', 'Maple'],
+    enum : ['Cedar','Mahogany', 'Spruce'],
     default : 'Cedar'
   },
   sideWood : {
     type: String,
-    enum : ['Mahogany', 'Spruce', 'Maple', 'Koa', 'Rosewood', 'Walnut'],
+    // enum : ['Mahogany', 'Spruce', 'Maple', 'Koa', 'Rosewood', 'Walnut'],
+    enum : ['Mahogany','Spruce', 'Cedar'],
     default : 'Mahogany'
   },
   backWood : {
     type: String,
-    enum : ['Mahogany','Spruce', 'Cedar', 'Maple'],
+    // enum : ['Mahogany','Spruce', 'Cedar', 'Maple'],
+    enum : ['Mahogany','Spruce', 'Cedar'],
     default : 'Mahogany'
   }
 }, { 
@@ -41,7 +44,8 @@ const bodySchema = new Schema({
 const neckSchema = new Schema({
   neckWood : {
     type: String,
-    enum : ['Rosewood', 'Maple', 'Ebony', 'Walnut'],
+    // enum : ['Rosewood', 'Mahogany', 'Maple', 'Cedar, 'Ebony', 'Walnut'],
+    enum : ['Rosewood', 'Mahogany', 'Maple'],
     default : 'Rosewood'
   },
   positionMarkers : {
