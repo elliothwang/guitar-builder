@@ -83,6 +83,16 @@ nav a:first-child:hover {
   margin: 0px -5px 0 20px;
 }
 
+#all-guitars {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1fr 1fr;
+}
+
+#guitar-label, #guitar-creator-image-label, #creator-label {
+  text-align: center;
+}
+
+
 #new-guitar-form {
   display: grid;
   grid-gap: 10px;
@@ -102,11 +112,43 @@ nav a:first-child:hover {
 
 #create-guitar {
   margin: 0 35%;
-  font-size: 15px;
+  font-size: 20px;
   color: #FFFFF0;
   background-color: #e7c9a9;
   border: 1px solid #FFFFF0;
   border-radius: 25px;
+}
+
+#create-guitar:hover {
+  cursor: pointer;
+  color: #e7c9a9;
+  background-color: #FFFFF0;
+  border: 1px solid #e7c9a9;
+}
+
+.guitar-details-button {
+  font-size: 20px;
+  color: #FFFFF0;
+  background-color: #e7c9a9;
+  border: 1px solid #FFFFF0;
+  border-radius: 25px;
+  padding: 5px 10px 5px 10px;
+}
+
+button {
+  font-size: 20px;
+  color: #FFFFF0;
+  background-color: #e7c9a9;
+  border: 1px solid #FFFFF0;
+  border-radius: 25px;
+  padding: 5px 10px 5px 10px;
+}
+
+button:hover {
+  cursor: pointer;
+  color: #e7c9a9;
+  background-color: #FFFFF0;
+  border: 1px solid #e7c9a9;
 }
 
 #footer-logo {

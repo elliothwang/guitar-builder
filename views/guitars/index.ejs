@@ -1,19 +1,22 @@
 <%- include('../partials/header') %>
 
-  <h1>All guitars</h1>
+  <div id="all-guitars">
+    <h1>All Guitars</h1>
+    <div id="guitar-name" class="label">Name</div>
+    <div id="guitar-creator-image" class="label"></div>
+    <div id="guitar-creator" class="label">Creator</div>
 
   <% guitars.forEach(function (guitar) { %>
     <div>
-      <%= guitar.name %>
-      <%= guitar.userName %>
-      <%= guitar.userAvatar %>
-      <!-- image of guitar -->
-
+      <div><%= guitar.name %></div>
+      <div><%= guitar.userAvatar %></div>
+      <div><%= guitar.userName %></div>
     </div>
-    <a href='/guitars/<%= guitar._id%>'>Guitar Details</a>
+    <a href='/guitars/<%= guitar._id%>' class="guitar-details-button">Guitar Details</a>
     <form action="/guitars/<%= guitar.id %>?_method=DELETE" method="POST">
       <button type="submit">DELETE</button>
     </form>
   <% }); %>
+  </div>
 
-  <a href='/guitars/new'>Create Custom Guitar</a>
+<%- include('../partials/footer') %>
