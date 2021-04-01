@@ -1,15 +1,22 @@
 <%- include('../partials/header') %>
 
-  <h1>User's guitars</h1>
-
-  <% userGuitars.forEach(function (userGuitar) { %>
-    <tr>
-      <td><%= userGuitar.name %></td>
-      <td><%= userGuitar.body %></td>
-      <td><%= userGuitar.neck %></td>
-      <td><%= userGuitar.userName %></td>
-      <td><%= userGuitar.userAvatar %></td>
-    </tr>
-  <% }); %>
+  <table id="user-guitars">
+    <thead>
+      <th>Name</th>
+      <th>Top Wood</th>
+      <th>Side & Back Wood</th>
+      <th>Position Markers</th>
+    </thead>
+    <tbody>
+      <% userGuitars.forEach(function (userGuitar) { %>
+        <tr>
+          <td><%= userGuitar.name %></td>
+          <td><%= userGuitar.body.topWood %></td>
+          <td><%= userGuitar.body.sideAndBackWood %></td>
+          <td><%= userGuitar.neck.positionMarkers %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
 
 <%- include('../partials/footer') %> 
