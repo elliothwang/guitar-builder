@@ -16,8 +16,10 @@ const commentSchema = new Schema({
 const bodySchema = new Schema({
   bodyType : {
     type : String,
-    enum : ['Dreadnought', 'Auditorium', 'Parlour', 'Classical'],
-    default : 'Dreadnought',
+    // enum : ['Dreadnought', 'Grand Auditorium', 'Parlour', 'Classical'],
+    enum : ['Grand Auditorium'],
+    // default : 'Dreadnought'
+    default : 'Grand Auditorium'
   },
   topWood : {
     type: String,
