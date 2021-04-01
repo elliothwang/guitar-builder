@@ -14,13 +14,13 @@ const commentSchema = new Schema({
 
 // embedded schemas (neck & body)
 const bodySchema = new Schema({
-  bodyType : {
-    type : String,
+  // bodyType : {
+    // type : String,
     // enum : ['Dreadnought', 'Grand Auditorium', 'Parlour', 'Classical'],
-    enum : ['Grand Auditorium'],
+    // enum : ['Grand Auditorium'],
     // default : 'Dreadnought'
-    default : 'Grand Auditorium'
-  },
+    // default : 'Grand Auditorium'
+  // },
   topWood : {
     type: String,
     // enum : ['Cedar','Spruce', 'Mahogany', 'Maple'],

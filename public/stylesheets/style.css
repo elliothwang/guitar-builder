@@ -86,14 +86,27 @@ nav a:first-child:hover {
 #new-guitar-form {
   display: grid;
   grid-gap: 10px;
+  margin: 0 15%;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  background-color: #FFFFF0;
+  border-radius: 25px;
 }
 
-.responsive-img {
-  width: 25%;
+#new-guitar-form > input, #new-guitar-form > select {
+  padding: 5px;
+  margin: 0 30%;
+  border-radius: 25px;
 }
 
-#guitar-img {
-  mix-blend-mode: multiply;
+#create-guitar {
+  margin: 0 35%;
+  font-size: 15px;
+  color: #FFFFF0;
+  background-color: #e7c9a9;
+  border: 1px solid #FFFFF0;
+  border-radius: 25px;
 }
 
 #footer-logo {
