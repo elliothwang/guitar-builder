@@ -1,19 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
+  background-image: url("https://i.imgur.com/Cf2lD8v.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
+  margin: 0 auto;
+  height: 100vh;
+  grid-template-rows: 50px 1fr;
 }
 
 nav {
   grid-area: nav;
-  background-color: gray;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  margin: 0 50px 0 50px;
+  font-weight: bold;
+  color: #FFFFF0;
+}
+
+a {
+  color: #FFFFF0;
+  text-decoration: none;
   padding: 10px;
+}
+
+a:hover {
+  color: #e7c9a9;
+  background-color: #FFFFF0;
+  border-radius: 7%;
+}
+
+a:active {
+  color: slategray;
+}
+
+#corner-logo {
+  position: absolute;
+  left: 0;
 }
 
 .login {
@@ -27,8 +56,25 @@ nav {
   height: 30px;
 }
 
+#index-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFF0;
+  background-color: #e7c9a9;
+  margin: 50px 0 0 0;
+}
+
 #new-guitar-form {
   display: grid;
   grid-gap: 10px;
 }
 
+.responsive-img {
+  width: 25%;
+}
+
+#guitar-img {
+  mix-blend-mode: multiply;
+}
