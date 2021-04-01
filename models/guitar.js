@@ -27,15 +27,20 @@ const bodySchema = new Schema({
     enum : ['Cedar','Mahogany', 'Spruce'],
     default : 'Cedar'
   },
-  sideWood : {
+  // sideWood : {
+  //   type: String,
+  //   // enum : ['Mahogany', 'Spruce', 'Maple', 'Koa', 'Rosewood', 'Walnut'],
+  //   enum : ['Mahogany','Spruce', 'Cedar'],
+  //   default : 'Mahogany'
+  // },
+  // backWood : {
+  //   type: String,
+  //   // enum : ['Mahogany','Spruce', 'Cedar', 'Maple'],
+  //   enum : ['Mahogany','Spruce', 'Cedar'],
+  //   default : 'Mahogany'
+  // }
+  sideAndBackWood : {
     type: String,
-    // enum : ['Mahogany', 'Spruce', 'Maple', 'Koa', 'Rosewood', 'Walnut'],
-    enum : ['Mahogany','Spruce', 'Cedar'],
-    default : 'Mahogany'
-  },
-  backWood : {
-    type: String,
-    // enum : ['Mahogany','Spruce', 'Cedar', 'Maple'],
     enum : ['Mahogany','Spruce', 'Cedar'],
     default : 'Mahogany'
   }
