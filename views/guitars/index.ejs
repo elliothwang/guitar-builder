@@ -1,22 +1,24 @@
 <%- include('../partials/header') %>
 
-  <div id="all-guitars">
-    <h1>All Guitars</h1>
-    <div id="guitar-name" class="label">Name</div>
-    <div id="guitar-creator-image" class="label"></div>
-    <div id="guitar-creator" class="label">Creator</div>
-
-  <% guitars.forEach(function (guitar) { %>
-    <div>
-      <div><%= guitar.name %></div>
-      <div><%= guitar.userAvatar %></div>
-      <div><%= guitar.userName %></div>
-    </div>
-    <a href='/guitars/<%= guitar._id%>' class="guitar-details-button">Guitar Details</a>
-    <form action="/guitars/<%= guitar.id %>?_method=DELETE" method="POST">
-      <button type="submit">DELETE</button>
-    </form>
-  <% }); %>
-  </div>
+  <table id="all-guitars">
+    <thead>
+      <th>Name</th>
+      <th>Creator</th>
+    </thead>
+    <tbody>
+      <% guitars.forEach(function (guitar) { %>
+        <tr>
+          <td><%= guitar.name %></td>
+          <td class="user-image"><img src="<%= guitar.userAvatar %>"><%= guitar.userName %></td>
+          <td><a href='/guitars/<%= guitar._id%>' class="guitar-details-button">Details</a></td>
+          <td>
+            <form action="/guitars/<%= guitar.id %>?_method=DELETE" method="POST">
+              <button type="submit">X</button>
+            </form>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
 
 <%- include('../partials/footer') %>

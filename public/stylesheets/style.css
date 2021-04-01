@@ -64,6 +64,7 @@ nav a:first-child:hover {
   position: absolute;
   top: 10px;
   right: 50px;
+  font-size: 20px;
 }
 
 #index-title {
@@ -83,17 +84,39 @@ nav a:first-child:hover {
   margin: 0px -5px 0 20px;
 }
 
-#all-guitars {
-  display: grid;
-  grid-template-columns: 1fr 0.5fr 1fr 1fr;
-}
-
-#guitar-label, #guitar-creator-image-label, #creator-label {
+#guitar-index-title {
   text-align: center;
 }
 
+table {
+  font-size: 20px;
+}
 
-#new-guitar-form {
+table thead th {
+  padding: 5px;
+  width: 10px;
+  color: black;
+  border-bottom: 2px solid #424748;
+}
+
+table td {
+  padding: 10px;
+  text-align: center;
+}
+
+.user-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-image img {
+  border-radius: 50%;
+  height: 40px;
+  padding-right: 10px;
+}
+
+#new-guitar-form, #all-guitars {
   display: grid;
   grid-gap: 10px;
   margin: 0 15%;
@@ -126,6 +149,10 @@ nav a:first-child:hover {
   border: 1px solid #e7c9a9;
 }
 
+#guitar-name-label {
+  padding-top: 10px;
+}
+
 .guitar-details-button {
   font-size: 20px;
   color: #FFFFF0;
@@ -138,7 +165,7 @@ nav a:first-child:hover {
 button {
   font-size: 20px;
   color: #FFFFF0;
-  background-color: #e7c9a9;
+  background-color: #e89292;
   border: 1px solid #FFFFF0;
   border-radius: 25px;
   padding: 5px 10px 5px 10px;
@@ -146,9 +173,9 @@ button {
 
 button:hover {
   cursor: pointer;
-  color: #e7c9a9;
+  color: #e89292;
   background-color: #FFFFF0;
-  border: 1px solid #e7c9a9;
+  border: 1px solid #e89292;
 }
 
 #footer-logo {

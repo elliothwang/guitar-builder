@@ -3,13 +3,13 @@
   <h1>User's guitars</h1>
 
   <% userGuitars.forEach(function (userGuitar) { %>
-    <div>
-      <%= userGuitar.name %>
-      <%= userGuitar.body %>
-      <%= userGuitar.neck %>
-      <%= userGuitar.userName %>
-      <%= userGuitar.userAvatar %>
-    </div>
+    <tr>
+      <td><%= userGuitar.name %></td>
+      <td><%= userGuitar.body %></td>
+      <td><%= userGuitar.neck %></td>
+      <td><%= userGuitar.userName %></td>
+      <td><%= userGuitar.userAvatar %></td>
+    </tr>
   <% }); %>
 
 <%- include('../partials/footer') %> 
