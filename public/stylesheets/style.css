@@ -160,21 +160,6 @@ table td {
   padding-top: 10px;
 }
 
-.guitar-details-button, #edit-comment-button {
-  font-size: 20px;
-  color: #FFFFF0;
-  background-color: #e7c9a9;
-  border: 1px solid #FFFFF0;
-  border-radius: 25px;
-  padding: 5px 10px 5px 10px;
-}
-
-.guitar-details-button:hover, #edit-comment-button:hover {
-  color: #e7c9a9;
-  background-color: hsl(60, 100%, 97%);
-  border: 1px solid #e7c9a9;
-}
-
 #comment-section {
   display: grid;
   justify-content: center;
@@ -208,6 +193,21 @@ button:hover {
   color: #e89292;
   background-color: #FFFFF0;
   border: 1px solid #e89292;
+}
+
+.guitar-details-button, #add-comment-button, #edit-comment-button {
+  font-size: 20px;
+  color: #FFFFF0;
+  background-color: #e7c9a9;
+  border: 1px solid #FFFFF0;
+  border-radius: 25px;
+  padding: 5px 10px 5px 10px;
+}
+
+.guitar-details-button:hover, #add-comment-button:hover, #edit-comment-button:hover {
+  color: #e7c9a9;
+  background-color: hsl(60, 100%, 97%);
+  border: 1px solid #e7c9a9;
 }
 
 #footer-logo {

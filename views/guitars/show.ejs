@@ -30,7 +30,7 @@
     <td>
       <form id="comment-form" action="/guitars/<%= guitar.id %>/comments" method="POST">
         <textarea name="content" class="comment-bubble"></textarea>
-        <input type="submit" value="Add Comment" id="add-comment-button">
+        <input type="submit" value="Add" id="add-comment-button">
       </form>
     </td>
   <% } %>
@@ -42,7 +42,7 @@
         <% if (user && user._id.equals(comment.user)) { %>
           <td>
             <form action="/comments/<%= comment._id %>/edit" method="GET">
-              <button type="submit">Edit</button>
+              <button type="submit" id="edit-comment-button">Edit</button>
             </form>
           </td>
           <td>
