@@ -15,18 +15,20 @@
         <td><%= guitar.body.topWood %></td>
         <td><%= guitar.body.sideAndBackWood %></td>
         <td><%= guitar.neck.neckWood %></td>
-        <td>
-          <form action="/guitars/<%= guitar.id %>?_method=DELETE" method="POST">
-            <button type="submit">X</button>
-          </form>
-        </td>
+        <% if (user && user._id.equals(guitar.user)) { %>
+          <td>
+            <form action="/guitars/<%= guitar.id %>?_method=DELETE" method="POST">
+              <button type="submit">X</button>
+            </form>
+          </td>
+        <% } %>
       </tr>
   </tbody>
 </table>
 
 <table id="comment-section">
   <% if (user) { %>
-    <td class="user-image"><img src="<%= guitar.userAvatar %>"></td>
+    <!-- <td class="user-image"><img src="<%= guitar.userAvatar %>"></td> -->
     <td>
       <form id="comment-form" action="/guitars/<%= guitar.id %>/comments" method="POST">
         <textarea name="content" class="comment-bubble"></textarea>
@@ -37,7 +39,7 @@
 
   <% if (guitar.comments.length) { %>
     <% guitar.comments.forEach(function (comment) { %>
-      <td class="user-image"><img src="<%= comment.userAvatar %>"></td>
+      <!-- <td class="user-image"><img src="<%= guitar.userAvatar %>"></td> -->
       <td><%= comment.content %></td>
         <% if (user && user._id.equals(comment.user)) { %>
           <td>
@@ -52,9 +54,7 @@
           </td>
         <% }; %>
     <% }); %>
-  <% } else { %>
-    <h5>No Comments Yet</h5>
-  <% } %>
+  <% }  %>
   </table>
 
 <%- include('../partials/footer') %>

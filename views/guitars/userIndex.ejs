@@ -15,6 +15,13 @@
           <td><%= userGuitar.body.topWood %></td>
           <td><%= userGuitar.body.sideAndBackWood %></td>
           <td><%= userGuitar.neck.neckWood %></td>
+          <% if (user && user._id.equals(userGuitar.user)) { %>
+            <td>
+              <form action="/guitars/<%= userGuitar.id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+              </form>
+            </td>
+          <% } %>
         </tr>
       <% }); %>
     </tbody>
