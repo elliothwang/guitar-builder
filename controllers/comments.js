@@ -22,13 +22,14 @@ function create (req, res) {
 };
 
 function deleteComment (req, res) {
-  Guitar.findOne({'reviews._id': req.params.id}).then(function(guitar) {
+  Guitar.findOne({'guitars._id': req.params.id}).then(function(guitar) {
+    console.log(guitar);
     const comment = guitar.comments.id(req.params.id);
-    if (!guitar.user.equals(req.user._id)) return res.redirect(`/guitars/${guitar._id}`);
-    comment.remove();
-    guitar.save(function (err) {
-      res.redirect(`/guitars/${guitar._id}`);
-    });
+      if (!guitar.user.equals(req.user._id)) return res.redirect(`/guitars/${guitar._id}`);
+      guitar.comments.remove();
+      guitar.save(function (err) {
+        res.redirect(`/guitars/${guitar._id}`);
+      });
   });
 };
 

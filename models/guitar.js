@@ -12,33 +12,13 @@ const commentSchema = new Schema({
   timestamps : true
 });
 
-// embedded schemas (neck & body)
 const bodySchema = new Schema({
-  // bodyType : {
-    // type : String,
-    // enum : ['Dreadnought', 'Grand Auditorium', 'Parlour', 'Classical'],
-    // enum : ['Grand Auditorium'],
-    // default : 'Dreadnought'
-    // default : 'Grand Auditorium'
-  // },
   topWood : {
     type: String,
-    // enum : ['Cedar','Spruce', 'Mahogany', 'Maple'],
     enum : ['Cedar','Mahogany', 'Spruce'],
     default : 'Cedar'
   },
-  // sideWood : {
-  //   type: String,
-  //   // enum : ['Mahogany', 'Spruce', 'Maple', 'Koa', 'Rosewood', 'Walnut'],
-  //   enum : ['Mahogany','Spruce', 'Cedar'],
-  //   default : 'Mahogany'
-  // },
-  // backWood : {
-  //   type: String,
-  //   // enum : ['Mahogany','Spruce', 'Cedar', 'Maple'],
-  //   enum : ['Mahogany','Spruce', 'Cedar'],
-  //   default : 'Mahogany'
-  // }
+
   sideAndBackWood : {
     type: String,
     enum : ['Mahogany','Spruce', 'Cedar'],
@@ -51,14 +31,8 @@ const bodySchema = new Schema({
 const neckSchema = new Schema({
   neckWood : {
     type: String,
-    // enum : ['Rosewood', 'Mahogany', 'Maple', 'Cedar, 'Ebony', 'Walnut'],
     enum : ['Rosewood', 'Mahogany', 'Maple'],
     default : 'Rosewood'
-  },
-  positionMarkers : {
-    type : String,
-    enum: ['Yes', 'No'],
-    default: 'Yes'
   }
 }, { 
   timestamps: true 

@@ -5,15 +5,16 @@
       <th>Name</th>
       <th>Top Wood</th>
       <th>Side & Back Wood</th>
-      <th>Position Markers</th>
+      <th>Neck Wood</th>
     </thead>
     <tbody>
       <% userGuitars.forEach(function (userGuitar) { %>
         <tr>
+          <!-- <td><%= userGuitar.image %></td> -->
           <td><%= userGuitar.name %></td>
           <td><%= userGuitar.body.topWood %></td>
           <td><%= userGuitar.body.sideAndBackWood %></td>
-          <td><%= userGuitar.neck.positionMarkers %></td>
+          <td><%= userGuitar.neck.neckWood %></td>
         </tr>
       <% }); %>
     </tbody>

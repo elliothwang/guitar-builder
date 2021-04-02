@@ -1,43 +1,60 @@
 <%- include('../partials/header') %>
 
-<h1>Guitar Details:</h1>  
-  <div>
-    <!-- image of guitar -->
-    <%= guitar.name %>
-    <%= guitar.body %>
-    <%= guitar.neck %>
-    <%= guitar.userName %>
-    <%= guitar.userAvatar %>
+<table id="guitar-details">
+  <thead>
+    <th>Creator</th>
+    <th>Name</th>
+    <th>Top Wood</th>
+    <th>Side & Back Wood</th>
+    <th>Neck Wood</th>
+  </thead>
+  <tbody>
+      <tr>
+        <td class="user-image"><img src="<%= guitar.userAvatar %>"><%= guitar.userName %></td>
+        <td><%= guitar.name %></td>
+        <td><%= guitar.body.topWood %></td>
+        <td><%= guitar.body.sideAndBackWood %></td>
+        <td><%= guitar.neck.neckWood %></td>
+        <td>
+          <form action="/guitars/<%= guitar.id %>?_method=DELETE" method="POST">
+            <button type="submit">X</button>
+          </form>
+        </td>
+      </tr>
+  </tbody>
+</table>
 
-    <form action="/guitars/<%= guitar.id %>?_method=DELETE" method="POST">
-      <button type="submit">DELETE</button>
-    </form>
-  </div>
-
+<table id="comment-section">
   <% if (user) { %>
-  <h2>Add a comment!</h2>
-    <form id="comment-form" action="/guitars/<%= guitar.id %>/comments" method="POST">
-      <label>Comment:</label>
-        <textarea name="content"></textarea>
-      <input type="submit" value="Add Comment">
-    </form>
+    <td class="user-image"><img src="<%= guitar.userAvatar %>"></td>
+    <td>
+      <form id="comment-form" action="/guitars/<%= guitar.id %>/comments" method="POST">
+        <textarea name="content" class="comment-bubble"></textarea>
+        <input type="submit" value="Add Comment" id="add-comment-button">
+      </form>
+    </td>
   <% } %>
 
   <% if (guitar.comments.length) { %>
     <% guitar.comments.forEach(function (comment) { %>
-        <%= comment.content %>
-        <%= user._id %>
+      <td class="user-image"><img src="<%= comment.userAvatar %>"></td>
+      <td><%= comment.content %></td>
         <% if (user && user._id.equals(comment.user)) { %>
-          <form action="/comments/<%= comment._id %>/edit" method="GET">
-            <button type="submit">Update Comment</button>
-          </form>
-          <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
-            <button type="submit">Delete Comment</button>
-          </form>
+          <td>
+            <form action="/comments/<%= comment._id %>/edit" method="GET">
+              <button type="submit">Edit</button>
+            </form>
+          </td>
+          <td>
+            <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
+              <button type="submit">X</button>
+            </form>
+          </td>
         <% }; %>
     <% }); %>
   <% } else { %>
     <h5>No Comments Yet</h5>
   <% } %>
+  </table>
 
 <%- include('../partials/footer') %>

@@ -10,8 +10,11 @@ module.exports = {
   update
 };
 
+<<<<<<< HEAD
   // use req.query
 
+=======
+>>>>>>> f384cd7 (fix git)
 function allGuitars (req, res) {
   // add a route for all guitars
   Guitar.find({}, function(err, guitars) {

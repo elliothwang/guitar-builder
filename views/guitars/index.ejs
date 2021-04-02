@@ -4,6 +4,7 @@
     <thead>
       <th>Name</th>
       <th>Creator</th>
+      <th></th>
     </thead>
     <tbody>
       <% guitars.forEach(function (guitar) { %>
@@ -11,11 +12,13 @@
           <td><%= guitar.name %></td>
           <td class="user-image"><img src="<%= guitar.userAvatar %>"><%= guitar.userName %></td>
           <td><a href='/guitars/<%= guitar._id%>' class="guitar-details-button">Details</a></td>
-          <td>
-            <form action="/guitars/<%= guitar.id %>?_method=DELETE" method="POST">
-              <button type="submit">X</button>
-            </form>
-          </td>
+          <% if (user && user._id.equals(guitar.user)) { %>
+            <td>
+              <form action="/guitars/<%= guitar.id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+              </form>
+            </td>
+          <% } %>
         </tr>
       <% }); %>
     </tbody>

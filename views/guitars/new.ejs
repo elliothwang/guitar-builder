@@ -1,86 +1,93 @@
 <%- include('../partials/header') %>
 
-<form id="new-guitar-form" action="/guitars" method="POST">
-  <!-- <div class="form-group form-inline"> -->
+<form id="new-guitar-form" action="/guitars" method="POST" autocomplete="off">
     <label id="guitar-name-label">Guitar Name</label>
-      <input type="text" name="name" id="guitar-name">
-
-    <!-- <label>Body Type</label> -->
-      <!-- <select name="bodyType"> -->
-        <!-- <option value='Dreadnought' selected="selected">Dreadnought</option> -->
-        <!-- <option value='Grand Auditorium'>Grand Auditorium</option> -->
-        <!-- <option value='Parlour'>Parlour</option> -->
-        <!-- <option value='Classical'>Classical</option> -->
-      <!-- </select> -->
+      <input type="text" name="name" id="guitar-name" required>
     <label>Top Wood</label>
-      <select name="topWood" id="select-topWood">
-        <option value='Cedar' selected="selected">Cedar</option>
+      <select name="topWood" id="select-topWood" required>
+        <option disabled selected value> -- select an option -- </option>
+        <option value='Cedar'>Cedar</option>
         <option value='Spruce'>Spruce</option>
         <option value='Mahogany'>Mahogany</option>
-        <!-- <option value='Maple'>Maple</option> -->
       </select>
-    <!-- <label>Side Wood</label>
-      <select name="sideWood">
-        <option value='Mahogany' selected="selected">Mahogany</option>
-        <option value='Spruce'>Spruce</option>
-        <option value='Cedar'>Cedar</option> -->
-        <!-- <option value='Maple'>Maple</option> -->
-        <!-- <option value='Maple'>Maple</option> -->
-        <!-- <option value='Koa'>Koa</option> -->
-        <!-- <option value='Rosewood'>Rosewood</option> -->
-        <!-- <option value='Walnut'>Walnut</option> -->
-      <!-- </select>
-    <label>Back Wood</label>
-      <select name="backWood">
-        <option value='Mahogany' selected="selected">Mahogany</option>
-        <option value='Spruce'>Spruce</option>
-        <option value='Cedar'>Cedar</option> -->
-        <!-- <option value='Maple'>Maple</option> -->
-      <!-- </select> -->
     <label>Side/Back Wood</label>
-      <select name="sideAndBackWood" id="select-sideAndBackWood">
-        <option value='Mahogany' selected="selected">Mahogany</option>
+      <select name="sideAndBackWood" id="select-sideAndBackWood" required>
+        <option disabled selected value> -- select an option -- </option>
+        <option value='Mahogany'>Mahogany</option>
         <option value='Spruce'>Spruce</option>
         <option value='Cedar'>Cedar</option>
       </select>
 
     <label>Neck Wood</label>
-      <select name="neckWood" id="select-neckWood">
-        <option value="Rosewood" selected="selected">Rosewood</option>
+      <select name="neckWood" id="select-neckWood" required>
+        <option disabled selected value> -- select an option -- </option>
+        <option value="Rosewood">Rosewood</option>
         <option value="Magohany">Mahogany</option>
         <option value="Maple">Maple</option>
-        <!-- <option value="Cedar">Cedar</option> -->
-        <!-- <option value="Ebony">Ebony</option> -->
-        <!-- <option value="Walnut">Walnut</option> -->
-      </select>
-    <label>Position Markers</label>
-      <select name="positionMarkers" id="select-positionMarkers">
-        <option value="Yes" selected="selected">Yes</option>
-        <option value="No">No</option>
-      </select>
-    
    <input type="submit" id="create-guitar" value="Create Guitar">
-  <iframe id="dynamic-guitar-model" src="https://www.vectary.com/viewer/v1/?model=4828f596-7638-40c0-a6b3-c556c878288e&env=studio3" frameborder="0" width="100%" height="480"></iframe>
-<!-- </div> -->
+  <iframe id="dynamic-guitar-model" src="https://www.vectary.com/viewer/v1/?model=8dd0a1ff-2f63-4f12-bea3-58e90d6c68ea&env=studio3" frameborder="0" width="100%" height="480"></iframe>
 
   <script>
     // create var for each input choice & use values for if statements
     let topWoodChoice = $('#select-topWood');
     let sideAndBackWoodChoice = $('#select-sideAndBackWood');
     let neckWoodChoice = $('#select-neckWood');
-    let positionMarkersChoice = $('#select-positionMarkers')
-
+ 
       topWoodChoice.on('change', function() {
       if (this.value === 'Cedar') {
         $('#dynamic-guitar-model').attr('src','https://www.vectary.com/viewer/v1/?model=0111765d-17d6-4bde-bcb6-7129ff9622c5&env=studio3');
+        console.log(topWoodChoice.value);
       } else if (this.value === 'Spruce') {
         $('#dynamic-guitar-model').attr('src', 'https://www.vectary.com/viewer/v1/?model=34aafcda-cdf8-4906-a581-1d282f0cc047&env=studio3');
       } else if (this.value === 'Mahogany') {
         $('#dynamic-guitar-model').attr('src', 'https://www.vectary.com/viewer/v1/?model=03378de1-ad4b-4f12-b66e-063c3d9cc7b0&env=studio3');
       }
     });
-  </script>
+    console.log(topWoodChoice);
+    console.log(topWoodChoice.value);
 
+    // cedar top + cedar back: https://www.vectary.com/viewer/v1/?model=32d86529-1a0b-409e-938d-4051e62d6185&env=studio3
+        // cedar top + cedar back + rosewood neck: https://www.vectary.com/viewer/v1/?model=b3ce7b44-58b5-4052-829b-e7d6efb90e5c&env=studio3
+        // cedar top + cedar back + mahogany neck: https://www.vectary.com/viewer/v1/?model=90615dba-1bd8-4e00-aaa6-3ef0903b31c8&env=studio3
+        // cedar top + cedar back + maple neck: https://www.vectary.com/viewer/v1/?model=62dba96d-233a-4721-b53b-607a765ff37d&env=studio3
+    // cedar top + spruce back: https://www.vectary.com/viewer/v1/?model=5787c328-8ace-4f1c-9d8a-3d237085797e&env=studio3
+        // cedar top + spruce back + rosewood neck: https://www.vectary.com/viewer/v1/?model=6e40c366-21ec-4fbc-a9ad-5234f3138880&env=studio3
+        // cedar top + spruce back + mahogany neck: https://www.vectary.com/viewer/v1/?model=15defe03-74b5-4e56-91c2-8919825a9150&env=studio3
+        // cedar top + spruce back + maple neck: https://www.vectary.com/viewer/v1/?model=acb439ed-a388-4e32-bcce-17f5eb8be5f0&env=studio3
+    // cedar top + mahogany back: https://www.vectary.com/viewer/v1/?model=0a49a85d-1c54-4a40-b785-063a71493e8b&env=studio3
+        // cedar top + mahogany back + rosewood neck: https://www.vectary.com/viewer/v1/?model=487db0f9-b1d9-4a03-967b-49b99d5fb8e6&env=studio3
+        // cedar top + mahogany back + mahogany neck: https://www.vectary.com/viewer/v1/?model=f494d6fc-1524-4df1-8e76-5c6be44ee3e3&env=studio3
+        // cedar top + mahogany back + maple neck: https://www.vectary.com/viewer/v1/?model=9cee9859-40e5-45c8-bb2c-0c8c02d5a3e6&env=studio3
+
+
+    // spruce top + cedar back: 
+      // spruce top + cedar back + rosewood neck: 
+      // spruce top + cedar back + mahogany neck: 
+      // spruce top + cedar back + maple neck: 
+    // spruce top + spruce back: 
+      // spruce top + spruce back + rosewood neck: 
+      // spruce top + spruce back + mahogany neck: 
+      // spruce top + spruce back + maple neck: 
+    // spruce top + mahogany back: 
+      // spruce top + mahogany back + rosewood neck: 
+      // spruce top + mahogany back + mahogany neck: 
+      // spruce top + mahogany back + maple neck: 
+
+
+    // mahogany top +cedar back: 
+      // mahogany top + cedar back + rosewood neck: 
+      // mahogany top + cedar back + mahogany neck: 
+      // mahogany top + cedar back + maple neck: 
+    // mahogany top + spruce back: 
+      // mahogany top + spruce back + rosewood neck: 
+      // mahogany top + spruce back + mahogany neck: 
+      // mahogany top + spruce back + maple neck: 
+    // mahogany top + mahogany back: 
+      // mahogany top + mahogany back + rosewood neck: 
+      // mahogany top + mahogany back + mahogany neck: 
+      // mahogany top + mahogany back + maple neck: 
+    
+  </script>
 </form>
   
 <%- include('../partials/footer') %>

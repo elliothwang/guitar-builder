@@ -77,15 +77,17 @@ nav a:first-child:hover {
   width: 50%;
   margin: 0 auto;
   border-radius: 25px;
-  border: dotted 4px #e7c9a9;
+  border: solid 2px #e7c9a9;
 }
 
 #g {
   margin: 0px -5px 0 20px;
 }
 
-#all-guitars, #new-guitar-form, #user-guitars {
+#all-guitars, #user-guitars, #guitar-details, #comment-section, #edit-comment-form {
   display: grid;
+  justify-content: center;
+  align-items: center;
   grid-gap: 10px;
   margin: 0 15%;
   padding: 10px;
@@ -93,14 +95,7 @@ nav a:first-child:hover {
   text-align: center;
   background-color: #FFFFF0;
   border-radius: 25px;
-}
-
-#guitar-index-title {
-  text-align: center;
-}
-
-table {
-  font-size: 20px;
+  border: solid 2px #e7c9a9;
 }
 
 table thead th {
@@ -124,7 +119,19 @@ table td {
 .user-image img {
   border-radius: 50%;
   height: 40px;
-  padding-right: 10px;
+  margin: 0 10px 0 0;
+}
+
+#new-guitar-form {
+  display: grid;
+  grid-gap: 10px;
+  margin: 0 15%;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  background-color: #FFFFF0;
+  border-radius: 25px;
+  border: solid 2px #e7c9a9;
 }
 
 #new-guitar-form > input, #new-guitar-form > select {
@@ -142,7 +149,7 @@ table td {
   border-radius: 25px;
 }
 
-#create-guitar:hover {
+#create-guitar:hover{
   cursor: pointer;
   color: #e7c9a9;
   background-color: #FFFFF0;
@@ -153,13 +160,38 @@ table td {
   padding-top: 10px;
 }
 
-.guitar-details-button {
+.guitar-details-button, #edit-comment-button {
   font-size: 20px;
   color: #FFFFF0;
   background-color: #e7c9a9;
   border: 1px solid #FFFFF0;
   border-radius: 25px;
   padding: 5px 10px 5px 10px;
+}
+
+.guitar-details-button:hover, #edit-comment-button:hover {
+  color: #e7c9a9;
+  background-color: hsl(60, 100%, 97%);
+  border: 1px solid #e7c9a9;
+}
+
+#comment-section {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  grid-gap: 10px;
+  margin: 0 15%;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #FFFFF0;
+  border-radius: 25px;
+  border: solid 2px #e7c9a9;
+}
+
+.comment-bubble {
+  padding: 5px;
+  font-size: 15px;
 }
 
 button {
@@ -179,10 +211,20 @@ button:hover {
 }
 
 #footer-logo {
-  display: flex;
-  justify-content: center;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  margin-left: -50px;
 }
 
 #footer-logo:hover {
   background-color: transparent;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
 }
