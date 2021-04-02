@@ -2,8 +2,8 @@ const Guitar = require('../models/guitar');
 
 module.exports = {
   create,
-  delete : deleteComment,
   update,
+  delete : deleteComment,
   edit
 };
 
@@ -21,18 +21,6 @@ function create (req, res) {
   });
 };
 
-function deleteComment (req, res) {
-  Guitar.findOne({'guitars._id': req.params.id}).then(function(guitar) {
-    console.log(guitar);
-    const comment = guitar.comments.id(req.params.id);
-      if (!guitar.user.equals(req.user._id)) return res.redirect(`/guitars/${guitar._id}`);
-      guitar.comments.remove();
-      guitar.save(function (err) {
-        res.redirect(`/guitars/${guitar._id}`);
-      });
-  });
-};
-
 function update (req, res) {
   Guitar.findOne({'comments._id': req.params.id}).then(function(guitar) {
     console.log(guitar);
@@ -44,6 +32,15 @@ function update (req, res) {
   });
 };
 
+function deleteComment (req, res) {
+  Guitar.findOne({'guitars._id': req.params.id}, function (err, guitar) {
+      if (!guitar.user.equals(req.user._id)) return res.redirect(`/guitars/${guitar._id}`);
+      guitar.comments.remove(req.params.id);
+      guitar.save(function (err) {
+        res.redirect(`/guitars/${guitar._id}`);
+      });
+  });
+};
 
 function edit (req, res) {
   Guitar.findOne({'comments._id': req.params.id}).then(function(guitar) {
