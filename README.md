@@ -5,7 +5,7 @@ A website to build yourself a custom acoustic guitar or see other custom guitars
 Screen Shot 2021-04-01 at 9.37.04 PM![image](https://user-images.githubusercontent.com/68434880/113381688-79718f80-9334-11eb-81cb-74399f9e661f.png)
 Screen Shot 2021-04-01 at 9.37.19 PM![image](https://user-images.githubusercontent.com/68434880/113381696-7c6c8000-9334-11eb-84b4-e5bcf826797a.png)
 
-<h1>Technologies Used</h1>: <br/>
+<h1>Technologies Used:</h1> <br/>
 <li>JavaScript</li> 
 <li>HTML5</li> 
 <li>CSS3</li> 
@@ -21,7 +21,7 @@ Screen Shot 2021-04-01 at 9.37.19 PM![image](https://user-images.githubuserconte
 3. Be able to hear a sample of what the custom may sound similar to.
 
 <h1>Getting Started:</h1> <br/>
-https://trello.com/b/mIYNFe2G/ga-project-2
+https://trello.com/b/mIYNFe2G/ga-project-2 <br/>
 https://acustom-guitar.herokuapp.com/
 
 
