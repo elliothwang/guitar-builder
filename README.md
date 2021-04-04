@@ -21,6 +21,6 @@
   https://acustom-guitar.herokuapp.com/
 
 <h1>Next Steps:</h1>
-  <ol>Update new form to fully dynamically change 3d model as user selects options.</ol> <br/>
-  <ol>Display a page of purchase-able guitars similar to the custom.</ol> <br/>
-  <ol>Be able to hear a sample of what the custom may sound similar to.</ol> <br/>
+  1. Update new form to fully dynamically change 3d model as user selects options. <br/>
+  2. Display a page of purchase-able guitars similar to the custom. <br/>
+  3. Be able to hear a sample of what the custom may sound similar to.
