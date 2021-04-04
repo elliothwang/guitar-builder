@@ -4,10 +4,10 @@ A website to build yourself a custom acoustic guitar or see other custom guitars
 
 <h1>Screenshots:</h1>
 <li>
-  ![Screen Shot 2021-04-01 at 9 37 04 PM](https://user-images.githubusercontent.com/68434880/113496089-f9ba0100-94aa-11eb-9d1b-04adcc700795.png)
+  ![Screen Shot 2021-04-01 at 9 37 04 PM][image](https://user-images.githubusercontent.com/68434880/113496089-f9ba0100-94aa-11eb-9d1b-04adcc700795.png)
 </li>
 <li>
-  ![Screen Shot 2021-04-01 at 9 37 19 PM](https://user-images.githubusercontent.com/68434880/113496081-ec047b80-94aa-11eb-9cd5-5f8aa6b524f6.png)
+  ![Screen Shot 2021-04-01 at 9 37 19 PM][image](https://user-images.githubusercontent.com/68434880/113496081-ec047b80-94aa-11eb-9cd5-5f8aa6b524f6.png)
 </li>
 
 
