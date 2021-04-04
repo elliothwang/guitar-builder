@@ -1,5 +1,4 @@
-App Title: <br/>
-Acustom Guitar <br/>
+App Title: Acustom Guitar <br/>
 A website to build yourself a custom acoustic guitar or see other custom guitars for inspiration! Users can create a guitar based off its top wood, side wood, back wood, & neck wood. While there are many more aspects of a guitar that are missing from that list, Acustom Guitar is a great way to visually build your guitar! Leave comments on others' guitars!
 
 Screenshots: <br/>
