@@ -3,7 +3,7 @@
   A website to build yourself a custom acoustic guitar or see other custom guitars for inspiration! Users can create a guitar based off its top wood, side wood, back wood, & neck wood. While there are many more aspects of a guitar that are missing from that list, Acustom Guitar is a great way to visually build your guitar! Leave comments on others' guitars!
 
 <h1>Screenshots:</h1>
-![Screen Shot 2021-04-01 at 9 37 04 PM](https://user-images.githubusercontent.com/68434880/113496192-0a1eab80-94ac-11eb-9bc0-5d7300c4168b.png)
+![Screen Shot 2021-04-01 at 9 37 04 PM](https://user-images.githubusercontent.com/68434880/113496192-0a1eab80-94ac-11eb-9bc0-5d7300c4168b.png) <br/>
 ![Screen Shot 2021-04-01 at 9 37 19 PM](https://user-images.githubusercontent.com/68434880/113496207-21f62f80-94ac-11eb-9591-691c144c376f.png)
 
 <h1>Technologies Used:</h1>
